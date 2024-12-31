@@ -1,0 +1,10 @@
+
+
+Let's say you know the value of Nc+1 and you have the ciphertext {{Nc+1}Kcs, Ns}gxy.
+You can use the session key gxy to decrypt the ciphertext and obtain the plaintext {Nc+1}Kcs, Ns.
+Next, you can use the known value of Nc+1 to create a new plaintext message {Nc+2}Kcs, Ns (incrementing the value of Nc by 1).
+Encrypt this message using the session key gxy to obtain the new ciphertext.
+Finally, XOR the new ciphertext with the original ciphertext {{Nc+1}Kcs, Ns}gxy.
+The result of this XOR operation will be equal to the encryption of the message {1}Kcs with the session key gxy. This is because XORing two identical plaintext messages results in a ciphertext of all zeros.
+You can recover the key Kcs by decrypting {1}Kcs using the session key gxy.
+Therefore, if an attacker can learn the value of Nc+1, they can use this attack to recover the key Kcs.
